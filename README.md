@@ -1,15 +1,15 @@
 #ChainOfResponsibility
 
 This is an implementation of chain of responsibility pattern. In this implementation, each node can notify objects to others. A node is any object that implements ChainOfResponsibility, and a sequence of nodes is a chain.
-Just an example
-
+##Just an example
+<pre>
 ChainOfResponsibility validateEntry = new ValidateEntry(...some data);
 ChainOfResponsibility saveInDb = new SaveInDB(...some data);
 ChainOfResponsibility makeOutput = new MakeOutput(...some data);
 
 ChainProccessor proccessor = new ChainProccessor(validateEntry, saveInDb, makeOutput);
 proccessor.start();
-
+</pre>
 ##Features
 
 1. Modularity. It's easy to move, add and remove any node.
