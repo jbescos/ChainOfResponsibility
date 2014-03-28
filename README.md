@@ -22,7 +22,7 @@ proccessor.start();
 Each ChainOfResponsibility that needs other object from others, must be annotated as @SubscribedChain. Create a method annotated as @Subscribe where you want to receive the notified object.
 
 We create a node that post "Hello World":
-
+<pre>
 public class HelloWorldNotifier implements ChainOfResponsibility{
 
    private String phrase;
@@ -45,9 +45,9 @@ public class HelloWorldNotifier implements ChainOfResponsibility{
    }
                 
 }
-
+</pre>
 And now, other node that will receive that string.
-
+<pre>
 @SubscribedChain
 public class HelloWorldReceiver implements ChainOfResponsibility{
                 
@@ -74,15 +74,15 @@ public class HelloWorldReceiver implements ChainOfResponsibility{
    }
                 
 }
-
+</pre>
 Now we start the chain. The order of nodes in ChainProccessor's constructor is the order that they will be called.
-
+<pre>
 ChainOfResponsibility chainPost = new HelloWorldNotifier();
 ChainOfResponsibility chainSubscribed = new HelloWorldReceiver();
 
 ChainProccessor proccessor = new ChainProccessor(chainPost, chainSubscribed);
 proccessor.start();
-
+</pre>
 The ChainProccessor will call methods in this order:
 
 1. chainPost.execute()
