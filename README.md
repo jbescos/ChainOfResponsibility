@@ -93,7 +93,7 @@ The ChainProccessor will call methods in this order:
 6. chainSubscribed.post()
 7. chainSubscribed.next() 
 
-Good practices
+##Good practices
 
 1. @Subscribed methods are invoked each time that any node post an object of the same type. Normally, you should construct that methods as setters.
 2. Normally wrap your post JDK objects with other objects. For example, don't post an Integer, create a new IntegerWrapper?(Integer) and post it.
@@ -101,7 +101,7 @@ Good practices
 4. Make sure you tests your ChainProccessor. Maybe you have some node that depends on other, but the other doesn't exists in this proccessor.
 5. Minimize mutability of posted objects to guarantee that other nodes don't modify their content. 
 
-Dependences
+##Dependences
 
 1. chain-of-responsibility_1.1.2.jar
 2. guava-15.0.jar
