@@ -1,5 +1,5 @@
-ChainOfResponsibility
-=====================
+#ChainOfResponsibility
+#=====================
 
 This is an implementation of chain of responsibility pattern. In this implementation, each node can notify objects to others. A node is any object that implements ChainOfResponsibility, and a sequence of nodes is a chain.
 Just an example
@@ -11,14 +11,14 @@ ChainOfResponsibility makeOutput = new MakeOutput(...some data);
 ChainProccessor proccessor = new ChainProccessor(validateEntry, saveInDb, makeOutput);
 proccessor.start();
 
-Features
+##Features
 
-    Modularity. It's easy to move, add and remove any node.
-    Injection. Each node is instanced outside.
-    Notifications. Any node can post object/objects to others.
-    Easy. Create as many nodes as you want, and add them to the ChainProccessor. 
+    1. Modularity. It's easy to move, add and remove any node.
+    2. Injection. Each node is instanced outside.
+    3. Notifications. Any node can post object/objects to others.
+    4. Easy. Create as many nodes as you want, and add them to the ChainProccessor. 
 
-Lets go with a full example
+##Lets go with a full example
 
 Each ChainOfResponsibility that needs other object from others, must be annotated as @SubscribedChain. Create a method annotated as @Subscribe where you want to receive the notified object.
 
@@ -86,24 +86,24 @@ proccessor.start();
 
 The ChainProccessor will call methods in this order:
 
-    chainPost.execute()
-    chainPost.post()
-    chainSubscribed.setString("Hello World")
-    chainPost.next()
-    chainSubscribed.execute()
-    chainSubscribed.post()
-    chainSubscribed.next() 
+    1. chainPost.execute()
+    2. chainPost.post()
+    3. chainSubscribed.setString("Hello World")
+    4. chainPost.next()
+    5. chainSubscribed.execute()
+    6. chainSubscribed.post()
+    7. chainSubscribed.next() 
 
 Good practices
 
-    @Subscribed methods are invoked each time that any node post an object of the same type. Normally, you should construct that methods as setters.
-    Normally wrap your post JDK objects with other objects. For example, don't post an Integer, create a new IntegerWrapper?(Integer) and post it.
-    Create a @SubscribedChain Object at first node to receive the errors that post other nodes. Then when ChainProccessor finish, you can analyze its content.
-    Make sure you tests your ChainProccessor. Maybe you have some node that depends on other, but the other doesn't exists in this proccessor.
-    Minimize mutability of posted objects to guarantee that other nodes don't modify their content. 
+    1. @Subscribed methods are invoked each time that any node post an object of the same type. Normally, you should construct that methods as setters.
+    2. Normally wrap your post JDK objects with other objects. For example, don't post an Integer, create a new IntegerWrapper?(Integer) and post it.
+    3. Create a @SubscribedChain Object at first node to receive the errors that post other nodes. Then when ChainProccessor finish, you can analyze its content.
+    4. Make sure you tests your ChainProccessor. Maybe you have some node that depends on other, but the other doesn't exists in this proccessor.
+    5. Minimize mutability of posted objects to guarantee that other nodes don't modify their content. 
 
 Dependences
 
-    chain-of-responsibility_1.1.2.jar
-    guava-15.0.jar
-    commons-logging.jar 
+    1. chain-of-responsibility_1.1.2.jar
+    2. guava-15.0.jar
+    3. commons-logging.jar 
