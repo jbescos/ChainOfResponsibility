@@ -76,23 +76,7 @@ The ChainProccessor will call methods in this order:
 4. Make sure you tests your chain. Maybe you have some node that depends on other, but the other doesn't exists in this proccessor.
 5. Minimize mutability of posted objects to guarantee that other nodes don't modify their content. 
 
-##Maven Dependences
+##Dependences
 
-<dependencies>
-	<dependency>
-		<groupId>com.google.guava</groupId>
-		<artifactId>guava</artifactId>
-		<version>16.0.1</version>
-	</dependency>
-	<dependency>
-		<groupId>commons-logging</groupId>
-		<artifactId>commons-logging</artifactId>
-		<version>1.1.3</version>
-	</dependency>
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>4.11</version>
-		<scope>test</scope>
-	</dependency>
-</dependencies>
+com.google.guava 16.0.1
+commons-logging 1.1.3
