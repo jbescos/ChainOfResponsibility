@@ -1,4 +1,4 @@
-package com.tododev.chain.core;
+package com.tododev.chain;
 
 public interface ChainOfResponsibility {
 
