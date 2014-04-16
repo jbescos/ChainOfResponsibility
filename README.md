@@ -62,7 +62,7 @@ HelloWorldReceiver receiver = new HelloWorldReceiver();
 ChainOfResponsibility chain = new DefaultChain(notifier, receiver);
 chain.start();
 </pre>
-The ChainProccessor will call methods in this order:
+DefaultChain will call methods in this order:
 
 1. notifier.execute()
 2. receiver.setPhrase("Hello World")
