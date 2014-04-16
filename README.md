@@ -78,5 +78,8 @@ The ChainProccessor will call methods in this order:
 
 ##Dependences
 
-com.google.guava 16.0.1
-commons-logging 1.1.3
+<a href="http://code.google.com/p/guava-libraries/">com.google.guava 16.0.1</a>
+<a href="http://commons.apache.org/proper/commons-logging/">commons-logging 1.1.3</a>
+<a href="https://github.com/jbescos/ChainOfResponsibility/blob/master/dist/com.tododev.chain-2.0.0.jar">com.tododev.chain-2.0.0.jar</a>
+
+
