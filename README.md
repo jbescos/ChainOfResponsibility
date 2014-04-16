@@ -80,9 +80,9 @@ The ChainProccessor will call methods in this order:
 <ul>
 <li><a href="http://code.google.com/p/guava-libraries/">com.google.guava 16.0.1</a></li>
 <li><a href="http://commons.apache.org/proper/commons-logging/">commons-logging 1.1.3</a></li>
-<ul>
+</ul>
 
 ##Download
 <ul>
 <li><a href="https://github.com/jbescos/ChainOfResponsibility/blob/master/dist/com.tododev.chain-2.0.0.jar">com.tododev.chain-2.0.0.jar</a></li>
-<ul>
+</ul>
