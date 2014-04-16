@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Define the response of ChainNode.
+ * @author jbescos
+ *
+ */
 public class NodeResponse {
 
 	private final ResponseType responseType;
@@ -14,10 +19,18 @@ public class NodeResponse {
 		this.post = Collections.unmodifiableList(builder.post);
 	}
 	
+	/**
+	 * Gets the ResponseType of a ChainNode.
+	 * @return
+	 */
 	public ResponseType getResponseType() {
 		return responseType;
 	}
 
+	/**
+	 * Unmodificable list of objects to post in other ChainNodes.
+	 * @return
+	 */
 	public List<Object> getPost() {
 		return post;
 	}

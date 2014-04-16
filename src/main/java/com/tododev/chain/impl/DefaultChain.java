@@ -12,12 +12,22 @@ import com.tododev.chain.node.ChainNode;
 import com.tododev.chain.node.NodeResponse;
 import com.tododev.chain.node.ResponseType;
 
+/**
+ * Default implementation of event chain of responsibility.
+ * Any ChainNode can post objects to others ChainNodes
+ * @author jbescos
+ *
+ */
 public class DefaultChain implements ChainOfResponsibility{
 
 	private final Log log = LogFactory.getLog(getClass());
 	private final EventBus eventBus = new EventBus();
 	private final List<ChainNode> nodes;
 	
+	/**
+	 * Add an array of ChainNode. The order of execution is the same as the array.
+	 * @param chainNodes
+	 */
 	public DefaultChain(ChainNode ... chainNodes){
 		nodes = Arrays.asList(chainNodes);
 		registerInEventbus(nodes);
@@ -29,6 +39,15 @@ public class DefaultChain implements ChainOfResponsibility{
 		}
 	}
 	
+	/**
+	 * Starts the chain. It will be finished when the chain is over or any
+	 * ChainNode stops.
+	 * The order of execution is:
+	 * -Call execute method of the first ChainNode.
+	 * -Post objects to event bus (id there are).
+	 * -EventBus will set that objects in the ChainNodes that are subscribed.
+	 * -Evaluate the ResponseType of ChainNode to continue with the next or not.
+	 */
 	@Override
 	public void start() {
 		boolean finish = false;
