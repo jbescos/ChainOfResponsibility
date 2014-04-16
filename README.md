@@ -77,7 +77,7 @@ The ChainProccessor will call methods in this order:
 5. Minimize mutability of posted objects to guarantee that other nodes don't modify their content. 
 
 ##Maven Dependences
-<pre>
+
 <dependencies>
 	<dependency>
 		<groupId>com.google.guava</groupId>
@@ -96,4 +96,3 @@ The ChainProccessor will call methods in this order:
 		<scope>test</scope>
 	</dependency>
 </dependencies>
-</pre>
