@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.google.common.collect.ImmutableList;
+
 /**
  * Define the response of ChainNode.
  * @author jbescos
@@ -16,7 +18,7 @@ public class NodeResponse {
 	
 	private NodeResponse(Builder builder){
 		this.responseType = builder.responseType;
-		this.post = Collections.unmodifiableList(builder.post);
+		this.post = ImmutableList.copyOf(builder.post);
 	}
 	
 	/**
